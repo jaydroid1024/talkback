@@ -56,7 +56,7 @@ public class LibLouisTranslator implements BrailleTranslator {
       tablesDir = customTablesDir;
     } else {
       tablesDir = context.getDir("translator", Context.MODE_PRIVATE);
-      TranslateUtils.extractTables(context.getResources(), R.raw.translationtables, tablesDir);
+//      TranslateUtils.extractTables(context.getResources(), R.raw.translationtables, tablesDir);
     }
     LouisTranslation.setTablesDir(tablesDir.getPath());
     bypassMap = new LinkedHashMap<>();

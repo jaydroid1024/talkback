@@ -15,7 +15,10 @@ import android.accessibilityservice.AccessibilityService.SoftKeyboardController;
 import android.content.Context;
 import android.content.SharedPreferences;
 import android.graphics.Region;
+import android.os.Build;
 import android.view.WindowManager;
+
+import androidx.annotation.RequiresApi;
 import androidx.annotation.VisibleForTesting;
 import com.google.android.accessibility.braille.interfaces.BrailleImeForTalkBack;
 import com.google.android.accessibility.braille.interfaces.ScreenReaderActionPerformer;
@@ -45,6 +48,7 @@ import java.util.stream.Collectors;
 import org.checkerframework.checker.nullness.qual.Nullable;
 
 /** Implements TalkBack functionalities exposed to BrailleIme. */
+@RequiresApi(api = Build.VERSION_CODES.TIRAMISU)
 public class TalkBackForBrailleImeImpl implements TalkBackForBrailleIme {
   private final Pipeline.FeedbackReturner feedbackReturner;
   private final TalkBackService service;
@@ -67,10 +71,10 @@ public class TalkBackForBrailleImeImpl implements TalkBackForBrailleIme {
   @VisibleForTesting
   static final Setting[] VALID_NON_CURSOR_GRANULARITIES = new Setting[] {GRANULARITY_TYPO};
 
-  @VisibleForTesting
-  static final Set<Setting> VALID_GRANULARITIES =
-      Arrays.stream(ArrayUtils.concat(VALID_CURSOR_GRANULARITIES, VALID_NON_CURSOR_GRANULARITIES))
-          .collect(Collectors.toUnmodifiableSet());
+//  @VisibleForTesting
+//  static final Set<Setting> VALID_GRANULARITIES =
+//      Arrays.stream(ArrayUtils.concat(VALID_CURSOR_GRANULARITIES, VALID_NON_CURSOR_GRANULARITIES))
+//          .collect(Collectors.toUnmodifiableSet());
 
   /** Provides functionality of private methods. */
   public interface TalkBackPrivateMethodProvider {
@@ -222,19 +226,19 @@ public class TalkBackForBrailleImeImpl implements TalkBackForBrailleIme {
 
   @Override
   public boolean moveCursorForwardByDefault() {
-    if (VALID_GRANULARITIES.contains(SelectorController.getCurrentSetting(service))) {
-      performMovingCursor(/* isForward */ true);
-      return true;
-    }
+//    if (VALID_GRANULARITIES.contains(SelectorController.getCurrentSetting(service))) {
+//      performMovingCursor(/* isForward */ true);
+//      return true;
+//    }
     return false;
   }
 
   @Override
   public boolean moveCursorBackwardByDefault() {
-    if (VALID_GRANULARITIES.contains(SelectorController.getCurrentSetting(service))) {
-      performMovingCursor(/* isForward */ false);
-      return true;
-    }
+//    if (VALID_GRANULARITIES.contains(SelectorController.getCurrentSetting(service))) {
+//      performMovingCursor(/* isForward */ false);
+//      return true;
+//    }
     return false;
   }
 
@@ -285,11 +289,11 @@ public class TalkBackForBrailleImeImpl implements TalkBackForBrailleIme {
       return false;
     }
     Setting current = SelectorController.getCurrentSetting(service);
-    do {
-      selectorController.selectPreviousOrNextSettingWithoutOverlay(
-          EVENT_ID_UNTRACKED, AnnounceType.DESCRIPTION, isNext);
-    } while (!VALID_GRANULARITIES.contains(SelectorController.getCurrentSetting(service))
-        && current != SelectorController.getCurrentSetting(service));
+//    do {
+//      selectorController.selectPreviousOrNextSettingWithoutOverlay(
+//          EVENT_ID_UNTRACKED, AnnounceType.DESCRIPTION, isNext);
+//    } while (!VALID_GRANULARITIES.contains(SelectorController.getCurrentSetting(service))
+//        && current != SelectorController.getCurrentSetting(service));
     return true;
   }
 
