@@ -1,21 +1,22 @@
-include ':talkback'
-include ':utils'
-include ':proguard'
+/* For building open-source release of accessibility services. */
 
-// Those subroots which are not direct sub-folders root need to be specially declared.
-include ':braillecommon'
-project(':braillecommon').projectDir = new File('braille/common')
-include ':brailleinterfaces'
-project(':brailleinterfaces').projectDir = new File('braille/interfaces')
-include ':brailleime'
-project(':brailleime').projectDir = new File('braille/brailleime')
-include 'brailleimeanalytics'
-project(':brailleimeanalytics').projectDir = new File('braille/brailleimeanalytics')
-include 'brailletranslate'
-project(':brailletranslate').projectDir = new File('braille/translate')
-include 'brailledisplay'
-project(':brailledisplay').projectDir = new File('braille/brailledisplay')
-include 'brailledisplayanalytics'
-project(':brailledisplayanalytics').projectDir = new File('braille/brailledisplayanalytics')
-include 'braillebrltty'
-project(':braillebrltty').projectDir = new File('braille/brltty')
+include ':talkback'
+project(':talkback').projectDir = new File(rootDir, 'talkback')
+
+include ':switchaccess'
+project(':switchaccess').projectDir = new File(rootDir, 'switchaccess')
+
+include ':compositor'
+project(':compositor').projectDir = new File(rootDir, 'compositor')
+
+include ':lib_utils_misc'
+project(':lib_utils_misc').projectDir = new File(rootDir, 'lib_utils_misc')
+
+include ':utils'
+project(':utils').projectDir = new File(rootDir, 'utils')
+
+include ':lib_utils_log'
+project(':lib_utils_log').projectDir = new File(rootDir, 'lib_utils_log')
+
+include ':proguard'
+project(':proguard').projectDir = new File(rootDir, 'proguard')

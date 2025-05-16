@@ -24,7 +24,7 @@
         android:layout_height="wrap_content"
         android:orientation="vertical" >
 
-        <androidx.appcompat.widget.AppCompatTextView
+        <TextView
             android:id="@+id/dim_screen_text"
             style="?android:attr/textAppearanceMedium"
             android:layout_width="fill_parent"
@@ -44,7 +44,7 @@
             android:paddingRight="16dp"
             android:paddingLeft="16dp"
             android:paddingTop="8dp"
-            android:text="@string/always_show_warning_checkbox" />
+            android:text="@string/show_suspend_warning_label" />
     </LinearLayout>
 
 </ScrollView>

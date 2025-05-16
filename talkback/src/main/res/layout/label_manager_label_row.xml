@@ -16,9 +16,19 @@
 -->
 
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="fill_parent"
-    android:layout_height="wrap_content">
+    android:layout_height="wrap_content" >
+
+    <ImageView
+        android:id="@+id/icon_image"
+        android:layout_width="64dp"
+        android:layout_height="64dp"
+        android:layout_marginBottom="8dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginRight="8dp"
+        android:layout_marginTop="8dp"
+        android:contentDescription="@string/talkback_title"
+        android:src="@drawable/icon" />
 
     <LinearLayout
         android:layout_width="fill_parent"
@@ -31,7 +41,7 @@
         android:layout_weight="1"
         android:orientation="vertical" >
 
-        <androidx.appcompat.widget.AppCompatTextView
+        <TextView
             android:id="@+id/label_text"
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
@@ -39,12 +49,10 @@
             android:ellipsize="marquee"
             android:gravity="center_vertical"
             android:singleLine="true"
-            android:textColor="@color/label_list_item_text_color"
-            app:fontFamily="@string/accessibility_font"
             android:textSize="18sp"
             android:textStyle="bold" />
 
-        <androidx.appcompat.widget.AppCompatTextView
+        <TextView
             android:id="@+id/label_timestamp"
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
@@ -52,8 +60,6 @@
             android:ellipsize="marquee"
             android:gravity="center_vertical"
             android:singleLine="true"
-            android:textColor="@color/label_list_item_text_color"
-            app:fontFamily="@string/accessibility_font"
             android:textSize="14sp" />
 
     </LinearLayout>

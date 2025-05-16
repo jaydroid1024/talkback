@@ -22,7 +22,7 @@
     >
 
 
-    <androidx.appcompat.widget.AppCompatTextView
+    <TextView
         android:id="@+id/summaryListHeader"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"

@@ -20,7 +20,6 @@
     android:layout_height="wrap_content"
     android:textDirection="locale"
     android:scrollbarStyle="outsideOverlay"
-    android:theme="@style/A11yAlertDialogCustomViewTheme"
     android:gravity="top">
 
     <LinearLayout
@@ -32,7 +31,7 @@
         android:layout_marginStart="16dp"
         android:layout_marginEnd="16dp">
 
-        <androidx.appcompat.widget.AppCompatTextView
+        <TextView
             android:id="@+id/dialog_content"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -40,9 +39,9 @@
             android:paddingBottom="8dp"
             android:paddingStart="8dp"
             android:paddingEnd="8dp"
-            android:textAppearance="@style/A11yAlertDialogContentTextStyle"/>
+            android:textAppearance="?android:attr/textAppearanceMedium"/>
 
-        <androidx.appcompat.widget.AppCompatTextView
+        <TextView
             android:id="@+id/dialog_second_content"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -51,9 +50,9 @@
             android:paddingStart="8dp"
             android:paddingEnd="8dp"
             android:visibility="gone"
-            android:textAppearance="@style/A11yAlertDialogContentTextStyle"/>
+            android:textAppearance="?android:attr/textAppearanceMedium"/>
 
-        <androidx.appcompat.widget.AppCompatTextView
+        <TextView
             android:id="@+id/dialog_third_content"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -62,16 +61,14 @@
             android:paddingStart="8dp"
             android:paddingEnd="8dp"
             android:visibility="gone"
-            android:textAppearance="@style/A11yAlertDialogContentTextStyle"/>
+            android:textAppearance="?android:attr/textAppearanceMedium"/>
 
         <CheckBox
             android:id="@+id/show_message_checkbox"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:theme="@style/CheckBoxTheme"
             android:minHeight="48dp"
             android:checked="true"
-            android:textAppearance="@style/A11yAlertDialogContentTextStyle"
             android:text="@string/always_show_this_message_label" />
     </LinearLayout>
 

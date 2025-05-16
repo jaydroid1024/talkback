@@ -1,4 +1,5 @@
-<?xml version="1.0" encoding="utf-8"?><!--
+<?xml version="1.0" encoding="utf-8"?>
+<!--
      Copyright (C) 2006 The Android Open Source Project
 
      Licensed under the Apache License, Version 2.0 (the "License");
@@ -17,40 +18,11 @@
 <resources>
 
   <!--The basic theme for service-->
-  <style name="TalkbackBaseTheme" parent="Theme.AppCompat.Light" >
-    <item name="selector_background_color">@color/quick_menu_overlay_background_color</item>
-    <item name="selector_background_stroke_color">@color/quick_menu_overlay_stroke_color</item>
-    <item name="selector_icon_color">@color/quick_menu_overlay_finger_swipe_icon_color</item>
-    <item name="selector_icon_stroke_color">@color/quick_menu_overlay_finger_swipe_icon_stroke_color</item>
-  </style>
+  <style name="BaseTheme" parent="Theme.AppCompat.Light"/>
 
   <!--The theme is for preference settings-->
-  <style name="TalkBackSettings" parent="Theme.MaterialComponents.Light.Bridge">
+  <style name="TalkBackSettings" parent="Theme.AppCompat.Light" >
     <item name="colorAccent">@color/colorAccent</item>
-  </style>
-
-  <!-- Keymap -->
-  <style name="KeymapTheme" parent="TalkBackSettings">
-    <item name="materialButtonStyle">@style/KeymapButtonStyle</item>
-  </style>
-
-  <style name="KeymapButtonStyle" parent="Widget.MaterialComponents.Button">
-    <item name="backgroundTint">@color/a11y_filled_button_background_color</item>
-    <item name="android:textColor">@color/a11y_filled_button_text_color</item>
-    <item name="android:textAllCaps">false</item>
-  </style>
-
-  <!-- Label manager -->
-  <style name="LabelManagerTheme" parent="TalkBackSettings">
-    <item name="materialButtonStyle">@style/LabelButtonStyle</item>
-  </style>
-
-  <style name="LabelButtonStyle" parent="Widget.MaterialComponents.Button">
-    <item name="backgroundTint">@color/a11y_filled_button_background_color</item>
-    <item name="android:textColor">@color/a11y_filled_button_text_color</item>
-    <item name="android:width">@dimen/label_manager_button_width</item>
-    <item name="android:height">@dimen/label_manager_button_height</item>
-    <item name="android:textAllCaps">false</item>
   </style>
 
   <style name="DialogStyle" parent="Theme.AppCompat.Light.Dialog">
@@ -66,61 +38,62 @@
   </style>
 
   <!--The theme is for dark dim screen text style-->
-  <style name="DimmingInstructionText">
-    <item name="android:layout_width">wrap_content</item>
-    <item name="android:layout_height">wrap_content</item>
-    <item name="android:textSize">16sp</item>
-    <item name="android:textColor">#FFFFFF</item>
-    <item name="android:gravity">left</item>
-    <item name="android:layout_marginLeft">48dp</item>
-    <item name="android:layout_marginRight">48dp</item>
-  </style>
+    <style name="DimmingInstructionText">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textSize">16sp</item>
+        <item name="android:textColor">#FFFFFF</item>
+        <item name="android:gravity">left</item>
+        <item name="android:layout_marginLeft">48dp</item>
+        <item name="android:layout_marginRight">48dp</item>
+    </style>
 
-  <style name="MaterialTextTitle">
-    <item name="android:textAppearance">?android:attr/textAppearanceMedium
-    </item>
-    <item name="android:textSize">20sp</item>
-  </style>
+    <style name="TutorialDescription" parent="MaterialTextBody1">
+        <item name="android:background">@color/tutorial_header_background</item>
+        <item name="android:paddingTop">12dp</item>
+        <item name="android:paddingBottom">0dp</item>
+        <item name="android:paddingLeft">@dimen/tutorial_content_horizontal_offset</item>
+        <item name="android:paddingRight">@dimen/tutorial_content_horizontal_offset</item>
+        <item name="android:minHeight">@dimen/tutorial_header_min_height</item>
+    </style>
 
-  <style name="MaterialTextSubHeading">
-    <item name="android:textAppearance">?android:attr/textAppearance</item>
-    <item name="android:textSize">16sp</item>
-  </style>
+    <!-- The theme applied to the tutorial activity -->
+    <style name="TutorialActivityTheme" parent="Theme.AppCompat.Light.NoActionBar">
+        <item name="android:actionBarStyle">@style/TutorialActionBar</item>
+    </style>
 
-  <style name="MaterialTextBody1">
-    <item name="android:textAppearance">?android:attr/textAppearance</item>
-    <item name="android:textSize">14sp</item>
-  </style>
+    <!-- ActionBar styles -->
+    <style name="TutorialActionBar" parent="@style/Widget.AppCompat.Light.ActionBar.Solid">
+        <item name="android:background">@color/tutorial_action_bar_background</item>
+        <item name="background">@color/tutorial_action_bar_background</item>
+        <!-- action bar title text -->
+        <item name="android:textColorPrimary">@color/tutorial_action_bar_text</item>
+        <!-- action bar up arrow -->
+        <item name="colorControlNormal">@color/tutorial_action_bar_text</item>
+    </style>
+    <style name="TutorialActionBarText" parent="TextAppearance.Widget.AppCompat.Toolbar.Title">
+        <item name="android:textSize">20sp</item>
+    </style>
 
-  <style name="MaterialTextButton">
-    <item name="android:textAppearance">?android:attr/textAppearanceMedium
-    </item>
-    <item name="android:textSize">14sp</item>
-    <item name="android:textAllCaps">true</item>
-  </style>
+    <style name="MaterialTextTitle">
+        <item name="android:textAppearance">?android:attr/textAppearanceMedium</item>
+        <item name="android:textSize">20sp</item>
+    </style>
 
-  <style name="CheckBoxTheme">
-    <item name="colorAccent">@color/colorAccent</item>
-  </style>
+    <style name="MaterialTextSubHeading">
+        <item name="android:textAppearance">?android:attr/textAppearance</item>
+        <item name="android:textSize">16sp</item>
+    </style>
 
-  <!-- The theme applied to the training activity -->
-  <style name="TrainingActivityTheme" parent="Theme.AppCompat.NoActionBar"/>
+    <style name="MaterialTextBody1">
+        <item name="android:textAppearance">?android:attr/textAppearance</item>
+        <item name="android:textSize">14sp</item>
+    </style>
 
-  <!-- Training action bar styles. -->
-  <style name="TrainingActionBarTheme" parent="@style/Widget.AppCompat.ActionBar.Solid">
-    <item name="android:background">@color/training_background_color</item>
-    <!-- For navigate up arrow. -->
-    <item name="colorControlNormal">@color/training_text_color</item>
-  </style>
+    <style name="MaterialTextButton">
+        <item name="android:textAppearance">?android:attr/textAppearanceMedium</item>
+        <item name="android:textSize">14sp</item>
+        <item name="android:textAllCaps">true</item>
+    </style>
 
-  <style name="TrainingActivityText">
-    <item name="android:layout_width">match_parent</item>
-    <item name="android:layout_height">wrap_content</item>
-    <item name="android:layout_marginTop">@dimen/training_padding_top</item>
-    <item name="fontFamily">@string/accessibility_font</item>
-    <item name="android:textColor">@color/training_text_color</item>
-    <item name="android:textSize">@dimen/training_text_size</item>
-    <item name="android:textColorLink">@color/training_link_text_color</item>
-    <item name="android:lineHeight">@dimen/training_text_height</item>
-  </style>
 </resources>
